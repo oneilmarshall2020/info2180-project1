@@ -1,0 +1,366 @@
+/*
+ * INFO2180 Project 1 - Stylesheet
+ */
+
+/* ==========================================================================
+   Base Styles and Typography (source: 198)
+   ========================================================================== */
+
+:root {
+    /* Define colors using variables for easy use */
+    --color-primary: #48BB78; /* Green (Learn About heading, button bg) (source: 204, 207, 209, 213) */
+    --color-secondary: #5A67D8; /* Indigo (Nav hover, Stories heading/links, Subscribe button) (source: 201, 210, 214) */
+    --color-text-nav: #6b7280; /* Gray for default nav links (source: 201) */
+    --color-bg-hero: #E2E8F0; /* Light Gray for Hero and Card borders (source: 203, 205) */
+    --color-bg-dark: #4A5568; /* Dark Gray for COVID and Footer backgrounds (source: 208, 215) */
+    --color-white: white; /* (source: 199, 208, 213, 215) */
+}
+
+/* Set default font family and size (source: 198) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 18px; /* (source: 198) */
+    margin: 0;
+    line-height: 1.6;
+    color: #333; /* Default dark text color for readability */
+}
+
+/* Apply padding/margin to give content room to breathe (source: 195) */
+section, footer {
+    padding: 40px 5%;
+    margin-bottom: 40px; /* Space between sections (source: 196) */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Generally center main headings */
+}
+
+/* ==========================================================================
+   Header and Navigation (source: 188)
+   ========================================================================== */
+
+header {
+    display: flex; /* Use Flexbox for header layout (source: 185) */
+    justify-content: space-between; /* Heading left, Nav right (source: 188) */
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--color-white); /* (source: 199) */
+    border-bottom: 1px solid var(--color-bg-hero);
+}
+
+header h1 {
+    font-size: 18px; /* (source: 200) */
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none; /* Remove bullet points (source: 188) */
+    display: flex; /* Lay out horizontally (source: 188) */
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--color-text-nav); /* Default link color (source: 201) */
+    font-size: 18px; /* (source: 200) */
+    padding: 0 15px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--color-secondary); /* Hover color (source: 201, 202) */
+}
+
+/* ==========================================================================
+   Hero Overview Section (source: 189)
+   ========================================================================== */
+
+.hero-overview {
+    background-color: var(--color-bg-hero); /* Background color (source: 203) */
+    display: flex; /* Use Flexbox for layout (source: 185) */
+    align-items: center;
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto; /* Ensure image stays to the right of its container */
+}
+
+/* ==========================================================================
+   Learn About Section (source: 190)
+   ========================================================================== */
+
+.learn-about h2 {
+    color: var(--color-primary); /* Heading color (source: 204) */
+    font-size: 24px; /* Heading text size (source: 204) */
+}
+
+.cards-grid {
+    display: grid; /* Use CSS Grid for 3-column layout (source: 190) */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.card {
+    border: 1px solid var(--color-bg-hero); /* Border color (source: 205) */
+    border-radius: 5px; /* Rounded corners (source: 205) */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Slight shadow (source: 206) */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    max-height: 100px; /* Constraint to keep icons reasonable size */
+}
+
+.card h3 {
+    color: var(--color-primary); /* Heading color (source: 207) */
+    font-size: 21px; /* Heading font size (source: 207) */
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   COVID-19 Testing Programme Section (source: 192)
+   ========================================================================== */
+
+.covid-testing {
+    background-color: var(--color-bg-dark); /* Background color (source: 208) */
+    color: var(--color-white); /* Text color (source: 208) */
+    display: flex; /* Use Flexbox for layout (source: 185) */
+    justify-content: space-between; /* Text left, Button right (source: 192) */
+    align-items: center;
+    padding: 40px 5%;
+    margin: 0; /* Remove bottom margin for full width appearance */
+}
+
+.covid-testing h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.covid-text {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    background-color: var(--color-primary); /* Button background color (source: 209) */
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners (source: 209) */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent button text wrapping */
+    transition: background-color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+    background-color: #38a169; /* Slightly darker green on hover */
+}
+
+
+/* ==========================================================================
+   Recent Stories Section (source: 193)
+   ========================================================================== */
+
+.recent-stories {
+    padding: 40px 5%;
+}
+
+.recent-stories h2 {
+    color: var(--color-secondary); /* Main heading color (source: 210) */
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.story {
+    display: flex; /* Use Flexbox for image/text side-by-side (source: 185, 193) */
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.story img {
+    width: 150px; /* Fixed size for circular image */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Make images circular (source: 212) */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.story-content h3 {
+    font-size: 18px; /* Story title size (source: 211) */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.story-content a {
+    color: var(--color-secondary); /* Link color (source: 210) */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.story-content a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Newsletter Section (source: 194)
+   ========================================================================== */
+
+.newsletter-signup {
+    background-color: var(--color-primary); /* Background color (source: 213) */
+    color: var(--color-white); /* Text color (source: 213) */
+    text-align: center; /* Center contents (source: 194) */
+    margin-top: 0; /* Remove top margin */
+}
+
+.newsletter-signup h2, .newsletter-signup p {
+    text-align: center;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center; /* Center the form elements */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 300px; /* Give the input field a reasonable width */
+    max-width: 80%;
+    font-size: 16px;
+}
+
+.newsletter-form button {
+    background-color: var(--color-secondary); /* Subscribe button color (source: 214) */
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #4c51bf; /* Slightly darker indigo on hover */
+}
+
+.newsletter-signup .message {
+    margin-top: 20px;
+    font-style: italic;
+    min-height: 20px; /* Ensure space for the message */
+}
+
+/* ==========================================================================
+   Footer Section (source: 215)
+   ========================================================================== */
+
+footer {
+    background-color: var(--color-bg-dark); /* Background color (source: 215) */
+    color: var(--color-white); /* Text color (source: 215) */
+    text-align: center;
+    padding: 20px 5%;
+    margin-bottom: 0; /* Should be at the very bottom */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Media Queries (Optional but recommended for responsiveness)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Adjust Header layout */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav ul {
+        margin-top: 15px;
+    }
+
+    /* Stack Hero layout */
+    .hero-overview {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .hero-image img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Stack Cards layout */
+    .cards-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    /* Stack COVID section */
+    .covid-testing {
+        flex-direction: column;
+        text-align: center;
+    }
+    .covid-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Stack Stories layout */
+    .story {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Stack Newsletter form */
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
