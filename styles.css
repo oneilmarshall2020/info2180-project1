@@ -1,302 +1,296 @@
 /*
- * INFO2180 Project 1 - Stylesheet
+ * INFO2180 Project 1 - Stylesheet (styles.css)
  */
 
-/* ==========================================================================
-   Base Styles and Typography (source: 198)
-   ========================================================================== */
-
 :root {
-    /* Define colors using variables for easy use */
-    --color-primary: #48BB78; /* Green (Learn About heading, button bg) (source: 204, 207, 209, 213) */
-    --color-secondary: #5A67D8; /* Indigo (Nav hover, Stories heading/links, Subscribe button) (source: 201, 210, 214) */
-    --color-text-nav: #6b7280; /* Gray for default nav links (source: 201) */
-    --color-bg-hero: #E2E8F0; /* Light Gray for Hero and Card borders (source: 203, 205) */
-    --color-bg-dark: #4A5568; /* Dark Gray for COVID and Footer backgrounds (source: 208, 215) */
-    --color-white: white; /* (source: 199, 208, 213, 215) */
+    /* Color Palette Variables */
+    --color-white: white;
+    --color-green-primary: #48BB78; 
+    --color-indigo-secondary: #5A67D8;
+    --color-gray-light: #E2E8F0; 
+    --color-gray-dark: #4A5568; 
+    --color-gray-text: #6b7280; 
 }
 
-/* Set default font family and size (source: 198) */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-size: 18px; /* (source: 198) */
+    font-size: 18px;
     margin: 0;
     line-height: 1.6;
-    color: #333; /* Default dark text color for readability */
+    color: #333;
 }
 
-/* Apply padding/margin to give content room to breathe (source: 195) */
-section, footer {
-    padding: 40px 5%;
-    margin-bottom: 40px; /* Space between sections (source: 196) */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-h2 {
-    font-size: 2em;
-    margin-bottom: 1.5rem;
-    text-align: center; /* Generally center main headings */
+section {
+    padding: 60px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* ==========================================================================
-   Header and Navigation (source: 188)
+   Header and Navigation
    ========================================================================== */
 
 header {
-    display: flex; /* Use Flexbox for header layout (source: 185) */
-    justify-content: space-between; /* Heading left, Nav right (source: 188) */
+    background-color: var(--color-white);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+header .container {
+    display: flex; 
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background-color: var(--color-white); /* (source: 199) */
-    border-bottom: 1px solid var(--color-bg-hero);
 }
 
 header h1 {
-    font-size: 18px; /* (source: 200) */
+    font-size: 18px;
     margin: 0;
 }
 
 header nav ul {
-    list-style: none; /* Remove bullet points (source: 188) */
-    display: flex; /* Lay out horizontally (source: 188) */
+    list-style: none;
+    display: flex; 
     padding: 0;
     margin: 0;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: var(--color-text-nav); /* Default link color (source: 201) */
-    font-size: 18px; /* (source: 200) */
+    color: var(--color-gray-text);
+    font-size: 18px;
     padding: 0 15px;
-    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: var(--color-secondary); /* Hover color (source: 201, 202) */
+    color: var(--color-indigo-secondary); 
 }
 
 /* ==========================================================================
-   Hero Overview Section (source: 189)
+   Hero Section 
    ========================================================================== */
 
-.hero-overview {
-    background-color: var(--color-bg-hero); /* Background color (source: 203) */
-    display: flex; /* Use Flexbox for layout (source: 185) */
+.overview-hero {
+    background-color: var(--color-gray-light);
+}
+
+.overview-hero .container {
+    display: flex; 
     align-items: center;
-    padding: 60px 5%;
     gap: 40px;
+    padding: 60px 20px; 
 }
 
-.hero-content {
+.overview-hero-image {
     flex: 1;
+    max-width: 50%;
 }
 
-.hero-image {
-    flex: 1;
-    text-align: right;
-}
-
-.hero-image img {
+.overview-hero-image img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-left: auto; /* Ensure image stays to the right of its container */
+}
+
+.overview-hero-text {
+    flex: 1;
+    max-width: 50%;
 }
 
 /* ==========================================================================
-   Learn About Section (source: 190)
+   Learn About Section
    ========================================================================== */
 
 .learn-about h2 {
-    color: var(--color-primary); /* Heading color (source: 204) */
-    font-size: 24px; /* Heading text size (source: 204) */
+    color: var(--color-green-primary);
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.cards-grid {
-    display: grid; /* Use CSS Grid for 3-column layout (source: 190) */
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+.learn-about .cards {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 0 5%;
 }
 
 .card {
-    border: 1px solid var(--color-bg-hero); /* Border color (source: 205) */
-    border-radius: 5px; /* Rounded corners (source: 205) */
+    border: 1px solid var(--color-gray-light);
+    border-radius: 5px;
     padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Slight shadow */
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Slight shadow (source: 206) */
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
 }
 
 .card img {
     max-width: 100%;
-    height: auto;
+    max-height: 100px;
     margin-bottom: 15px;
-    max-height: 100px; /* Constraint to keep icons reasonable size */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card h3 {
-    color: var(--color-primary); /* Heading color (source: 207) */
-    font-size: 21px; /* Heading font size (source: 207) */
+    color: var(--color-green-primary);
+    font-size: 21px;
     margin-top: 0;
 }
 
 /* ==========================================================================
-   COVID-19 Testing Programme Section (source: 192)
+   COVID-19 Testing Section
    ========================================================================== */
 
-.covid-testing {
-    background-color: var(--color-bg-dark); /* Background color (source: 208) */
-    color: var(--color-white); /* Text color (source: 208) */
-    display: flex; /* Use Flexbox for layout (source: 185) */
-    justify-content: space-between; /* Text left, Button right (source: 192) */
-    align-items: center;
-    padding: 40px 5%;
-    margin: 0; /* Remove bottom margin for full width appearance */
-}
-
-.covid-testing h2 {
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.covid-text {
-    flex: 1;
-    padding-right: 30px;
-}
-
-.btn-learn-more {
-    display: inline-block;
-    background-color: var(--color-primary); /* Button background color (source: 209) */
+.testing {
+    background-color: var(--color-gray-dark);
     color: var(--color-white);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px; /* Rounded corners (source: 209) */
-    font-weight: bold;
-    white-space: nowrap; /* Prevent button text wrapping */
-    transition: background-color 0.3s ease;
+    padding: 40px 0;
+    margin: 40px 0; 
 }
 
-.btn-learn-more:hover {
-    background-color: #38a169; /* Slightly darker green on hover */
+.testing .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 
+.testing-desciption {
+    flex: 1;
+}
+
+.testing-desciption h2 {
+    color: var(--color-white);
+    margin-top: 0;
+    text-align: left;
+    font-size: 2em;
+}
+
+.testing .cta .btn {
+    background-color: var(--color-green-primary);
+    color: var(--color-white);
+    white-space: nowrap; 
+}
+
+.testing .cta .btn:hover {
+    background-color: #38a169; 
+}
 
 /* ==========================================================================
-   Recent Stories Section (source: 193)
+   Recent Stories Section 
    ========================================================================== */
 
-.recent-stories {
-    padding: 40px 5%;
-}
-
-.recent-stories h2 {
-    color: var(--color-secondary); /* Main heading color (source: 210) */
+.stories h2 {
+    color: var(--color-indigo-secondary);
     text-align: left;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.story {
-    display: flex; /* Use Flexbox for image/text side-by-side (source: 185, 193) */
-    gap: 20px;
+.stories article {
+    display: flex; 
+    gap: 25px;
     align-items: flex-start;
     margin-bottom: 40px;
 }
 
-.story img {
-    width: 150px; /* Fixed size for circular image */
-    height: 150px;
+.stories article img {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 50%; /* Make images circular (source: 212) */
-    flex-shrink: 0; /* Prevent image from shrinking */
+    border-radius: 50%; 
+    flex-shrink: 0;
 }
 
-.story-content h3 {
-    font-size: 18px; /* Story title size (source: 211) */
+.stories .article-body h3 {
+    font-size: 18px;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.story-content a {
-    color: var(--color-secondary); /* Link color (source: 210) */
-    text-decoration: none;
+.stories .article-body a {
+    color: var(--color-indigo-secondary);
     font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-    transition: color 0.3s ease;
+    text-decoration: none;
 }
 
-.story-content a:hover {
+.stories .article-body a:hover {
     text-decoration: underline;
 }
 
 /* ==========================================================================
-   Newsletter Section (source: 194)
+   Newsletter Section 
    ========================================================================== */
 
-.newsletter-signup {
-    background-color: var(--color-primary); /* Background color (source: 213) */
-    color: var(--color-white); /* Text color (source: 213) */
-    text-align: center; /* Center contents (source: 194) */
-    margin-top: 0; /* Remove top margin */
-}
-
-.newsletter-signup h2, .newsletter-signup p {
+.newsletter {
+    background-color: var(--color-green-primary);
+    color: var(--color-white);
     text-align: center;
+    padding: 60px 0;
 }
 
-.newsletter-form {
+.newsletter h3 {
+    margin-top: 0;
+}
+
+.newsletter form {
     display: flex;
-    justify-content: center; /* Center the form elements */
+    justify-content: center; 
+    align-items: center;
     gap: 10px;
     margin-top: 20px;
 }
 
-.newsletter-form input[type="email"] {
+.newsletter .form-group {
+    flex-grow: 0; 
+}
+
+.newsletter input[type="email"] {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    width: 300px; /* Give the input field a reasonable width */
-    max-width: 80%;
+    width: 300px;
+    max-width: 100%;
     font-size: 16px;
 }
 
-.newsletter-form button {
-    background-color: var(--color-secondary); /* Subscribe button color (source: 214) */
+.newsletter button.btn {
+    background-color: var(--color-indigo-secondary);
     color: var(--color-white);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.newsletter-form button:hover {
-    background-color: #4c51bf; /* Slightly darker indigo on hover */
+.newsletter button.btn:hover {
+    background-color: #4c51bf;
 }
 
-.newsletter-signup .message {
+.newsletter .message {
     margin-top: 20px;
-    font-style: italic;
-    min-height: 20px; /* Ensure space for the message */
+    font-weight: bold;
+    min-height: 20px; 
 }
 
 /* ==========================================================================
-   Footer Section (source: 215)
+   Footer
    ========================================================================== */
 
 footer {
-    background-color: var(--color-bg-dark); /* Background color (source: 215) */
-    color: var(--color-white); /* Text color (source: 215) */
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+    padding: 20px 0;
     text-align: center;
-    padding: 20px 5%;
-    margin-bottom: 0; /* Should be at the very bottom */
 }
 
 footer p {
@@ -304,63 +298,61 @@ footer p {
 }
 
 /* ==========================================================================
-   Media Queries (Optional but recommended for responsiveness)
+   Media Queries (Responsiveness)
    ========================================================================== */
 
-@media (max-width: 768px) {
-    /* Adjust Header layout */
-    header {
+@media (max-width: 900px) {
+    .overview-hero .container {
         flex-direction: column;
         text-align: center;
+    }
+    .overview-hero-image, .overview-hero-text {
+        max-width: 100%;
+    }
+    .overview-hero-image img {
+        margin: 0 auto;
+    }
+
+    .learn-about .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testing .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .testing-desciption h2 {
+        text-align: center;
+    }
+
+    .stories article {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column;
     }
     header nav ul {
         margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav ul li {
+        margin: 5px;
     }
 
-    /* Stack Hero layout */
-    .hero-overview {
+    .learn-about .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter form {
         flex-direction: column;
-        text-align: center;
     }
-    .hero-image {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .hero-image img {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Stack Cards layout */
-    .cards-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
-
-    /* Stack COVID section */
-    .covid-testing {
-        flex-direction: column;
-        text-align: center;
-    }
-    .covid-text {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    /* Stack Stories layout */
-    .story {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* Stack Newsletter form */
-    .newsletter-form {
-        flex-direction: column;
-        align-items: center;
-    }
-    .newsletter-form input[type="email"],
-    .newsletter-form button {
+    .newsletter input[type="email"], .newsletter button.btn {
         width: 100%;
-        max-width: 300px;
     }
 }

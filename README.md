@@ -1,3 +1,3 @@
-# info2180-project1
+# INFO2180 Project 1
 
-This is project 1 for Oneil Marshall
+This is Project 1 for Oneil Marshall
